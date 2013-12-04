@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>polar | Point-ex for EaselJS</title>
+<link rel="stylesheet" type="text/css" href="css/index.css" media="all">
+<script type="text/javascript" src="js/easeljs-0.7.0.min.js"></script>
+<script type="text/javascript" src="js/point-ex-0.5.0.min.js"></script>
+<script type="text/javascript">
+
+var _canvas;
+var _stage;
+
+function init(canvasID) {
+	_canvas = document.getElementById(canvasID);
+	_stage = new createjs.Stage(_canvas);
+	test();
+}
+
+function test() {
+	var degree2radian = Math.PI / 180;
+	var point1 = createjs.Point.polar(10, 0 * degree2radian);
+	var point2 = createjs.Point.polar(10, 45 * degree2radian);
+	var point3 = createjs.Point.polar(10, 90 * degree2radian);
+	var point4 = createjs.Point.polar(10, 135 * degree2radian);
+	var point5 = createjs.Point.polar(10, 180 * degree2radian);
+	console.log(point1.toString()); // [Point (x=10 y=0)]
+	console.log(point2.toString()); // [Point (x=7.0710678118654755 y=7.071067811865475)]
+	console.log(point3.toString()); // [Point (x=6.123031769111886e-16 y=10)]
+	console.log(point4.toString()); // [Point (x=-7.071067811865475 y=7.0710678118654755)]
+	console.log(point5.toString()); // [Point (x=-10 y=1.2246063538223773e-15)]
+}
+
+window.addEventListener("load", function loadHandler(evt) {
+	window.removeEventListener("load", loadHandler, false);
+	init("my-canvas");
+}, false);
+
+</script>
+</head>
+<body>
+
+<canvas id="my-canvas" width="640" height="360"></canvas>
+
+</body>
+</html>

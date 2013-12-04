@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>equals | Point-ex for EaselJS</title>
+<link rel="stylesheet" type="text/css" href="css/index.css" media="all">
+<script type="text/javascript" src="js/easeljs-0.7.0.min.js"></script>
+<script type="text/javascript" src="js/point-ex-0.5.0.min.js"></script>
+<script type="text/javascript">
+
+var _canvas;
+var _stage;
+
+function init(canvasID) {
+	_canvas = document.getElementById(canvasID);
+	_stage = new createjs.Stage(_canvas);
+	test();
+}
+
+function test() {
+	var point1 = new createjs.Point(100, 100);
+	var point2 = new createjs.Point(100, -100);
+	var point3 = new createjs.Point(100, 100);
+	console.log(point1.equals(point2)); // false
+	console.log(point1.equals(point3)); // true
+}
+
+window.addEventListener("load", function loadHandler(evt) {
+	window.removeEventListener("load", loadHandler, false);
+	init("my-canvas");
+}, false);
+
+</script>
+</head>
+<body>
+
+<canvas id="my-canvas" width="640" height="360"></canvas>
+
+</body>
+</html>
