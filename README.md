@@ -9,7 +9,8 @@ Point-ex for EaselJS is extension of EaselJS's Point class.
 
 
 ## Resources
-More information and samples at the [kudox.jp](http://kudox.jp/java-script/createjs-point-extended)
+* More information and samples at the [kudox.jp](http://kudox.jp/java-script/createjs-point-extended)
+* Read the [AS3 API Documentation](http://help.adobe.com/en_US/FlashPlatform/reference/actionscript/3/flash/geom/Point.html), because API is similar to AS3.
 
 
 ## Contact and bug reports
