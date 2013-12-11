@@ -1,6 +1,6 @@
 /**
  * Point-ex for EaselJS
- * Version: 0.70
+ * Version: 0.71
  * Contact and bug reports : http://kudox.jp/contact or http://twitter.com/u_kudox
  * License : public domain
  **/
@@ -48,9 +48,14 @@
 
 	p.normalize = function(thickness) {
 		var length = this.length;
-		var scale = thickness / length;
-		this.x *= scale;
-		this.y *= scale;
+		if (length === 0 || thickness === 0) {
+			this.x = 0;
+			this.y = 0;
+		} else {
+			var scale = thickness / length;
+			this.x *= scale;
+			this.y *= scale;
+		}
 	};
 
 	p.offset = function(dx, dy) {
