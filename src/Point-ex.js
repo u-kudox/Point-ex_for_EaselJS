@@ -1,6 +1,6 @@
 /**
  * Point-ex for EaselJS
- * Version: 0.71
+ * Version: 0.80
  * Contact and bug reports : http://kudox.jp/contact or http://twitter.com/u_kudox
  * License : public domain
  **/
@@ -14,25 +14,17 @@
 
 	var Point = createjs.Point;
 
-	var p = {
-		get length() {
-			return Math.sqrt(this.x * this.x + this.y * this.y);
+	var p = Point.prototype;
+
+	Object.defineProperty(p,
+		'length', {
+			get : function() {
+				var x = this.x;
+				var y = this.y;
+				return Math.sqrt(x * x + y * y);
+			}
 		}
-	};
-
-	var oProto = Point.prototype;
-	for (var k in oProto) {
-		p[k] = oProto[k];
-	}
-	Point.prototype = p;
-	p.constructor = Point;
-
-	/**
-	* @deprecated Use `length` instead.
-	**/
-	p.getLength = function() {
-		return Math.sqrt(this.x * this.x + this.y * this.y);
-	};
+	);
 
 	p.add = function(v) {
 		return new Point(this.x + v.x, this.y + v.y);
