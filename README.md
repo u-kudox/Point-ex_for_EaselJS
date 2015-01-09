@@ -8,6 +8,22 @@ Point-ex for EaselJS is extension of EaselJS's Point class.
 	console.log(point1.toString()); // [Point (x=0.7071067811865476 y=0.7071067811865476)]
 
 
+## Additional Property
+* length [read only]
+
+## Additional Methods
+* add
+* subtract
+* equals
+* normalize
+* offset
+* setTo
+* copyFrom
+* distance [static]
+* interpolate [static]
+* polar [static]
+
+
 ## Resources
 * More information and samples at the [kudox.jp](http://kudox.jp/java-script/createjs-point-extended)
 * Read the [AS3 API Documentation](http://help.adobe.com/en_US/FlashPlatform/reference/actionscript/3/flash/geom/Point.html), because API is similar to AS3.

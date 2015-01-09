@@ -1,3 +1,11 @@
+ver 0.8.0 [Jan 9, 2015]
+**********************************************************************************
+- removed getLength()
+  use `length` instead.
+- used Object.defineProperty() in getter `length`.
+
+
+
 ver 0.7.1 [Dec 11, 2013]
 **********************************************************************************
 - fixed a bug of division by 0 in normalize().
